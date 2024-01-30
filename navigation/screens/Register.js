@@ -6,7 +6,7 @@ class Register extends Component {
     return (
       <View>
         <Text>Register Here</Text>
-        <Button onPress={()=>this.props.navigation.navigate("Home")} title="Home"/>
+        <Button onPress={()=>this.props.navigation.navigate("BottomNavigator")} title="Home"/>
       </View>
     );
   }

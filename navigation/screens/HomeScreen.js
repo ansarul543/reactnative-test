@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StatusBar, Image, ScrollView, TextInput, SafeAreaView, Button } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons"
-import MainContainer from "../MainContainer";
+import FontAwesome, { SolidIcons, RegularIcons, BrandIcons } from 'react-native-fontawesome';
 
 export default function HomeScreen({navigation}){
    return(
@@ -9,7 +8,9 @@ export default function HomeScreen({navigation}){
 
        <Text >Welcome to React Native!</Text>
        <Button onPress={()=>navigation.navigate("Details")} title="Details"/>
-
+       <FontAwesome icon={SolidIcons.smile} />
+       <FontAwesome icon={RegularIcons.smileWink} />
+       <FontAwesome icon={BrandIcons.github} />
      </View>
    );
 }
