@@ -16,10 +16,14 @@ export default function MainContainer(){
     <Tab.Navigator initialRouteName="Home" shifting={true}>
       <Tab.Screen name={"Home"} component={HomeScreen}
                   options={{headerShown:false,
-                    tabBarIcon:()=>{return <FontAwesome5 name={'comments'} solid />},
+                    tabBarIcon:()=>{return <FontAwesome5 name={'home'} size={20} solid />},
                   }} />
-      <Tab.Screen name={"Details"} component={DetailsScreen} options={{headerShown:false}} />
-      <Tab.Screen name={"Settings"} component={SettingsScreen} options={{headerShown:false}} />
+      <Tab.Screen name={"Details"} component={DetailsScreen} options={{headerShown:false,
+        tabBarIcon:()=>{return <FontAwesome5 name={'book'} size={20} solid />},
+      }} />
+      <Tab.Screen name={"Settings"} component={SettingsScreen} options={{headerShown:false,
+        tabBarIcon:()=>{return <FontAwesome5 name={'wrench'} size={20} solid />},
+      }} />
     </Tab.Navigator>
   );
 }

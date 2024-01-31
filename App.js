@@ -2,7 +2,20 @@ import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, Button, StatusBar } from "react-native";
 import MainContainer from "./navigation/MainContainer";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "react-native-screens/native-stack";
+//import { createNativeStackNavigator } from "react-native-screens/native-stack";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Notifications" component={Notifications} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Settings" component={Settings} />
+    </Stack.Navigator>
+  );
+}
 import Login from "./navigation/screens/Login";
 import Register from "./navigation/screens/Register";
 import HomeScreen from "./navigation/screens/HomeScreen";
