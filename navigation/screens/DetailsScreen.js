@@ -5,7 +5,7 @@ export default function DetailsScreen({navigation}){
   return(
     <View>
       <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "white" translucent = {true}/>
-      <Text>Details Screen</Text>
+      <Text style={{marginTop:50,marginBottom:30,fontSize:20}}>Details Screen</Text>
       <ScrollView>
         <Text>Some text with me</Text>
         <Text>Welcome Ansarul Mullah</Text>

@@ -6,8 +6,8 @@ export default function HomeScreen({navigation}){
    return(
      <View>
 
-       <Text >Welcome to React Native!</Text>
-       <Button onPress={()=>navigation.navigate("Details")} title="Details"/>
+       <Text style={{marginTop:50,marginBottom:30,fontSize:20}}>Welcome to React Native!</Text>
+       <Button onPress={()=>navigation.navigate("Login")} title="Login Page"/>
        <Icon name="home" size={30}  />
      </View>
    );
