@@ -14,19 +14,22 @@ const auth = 1
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={auth==0?"Login":"BottomNavigator"}>
+      <Stack.Navigator initialRouteName={auth==0?"Login":"BottomNavigator"}
+                       screenOptions={{
+                         headerTitleAlign:"center",
+                         headerStyle: {
+                           backgroundColor: 'white',
+                         },
+                         headerTintColor: 'black',
+                         headerTitleStyle: {
+                           fontWeight: 'normal',
+                         }
+                       }}>
         <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
-        <Stack.Screen name="Register" component={Register} options={{headerBackTitleVisible:true}} />
+        <Stack.Screen name="Register" component={Register} options={{headerShown:true,headerBackVisible:true}} />
         <Stack.Screen name="BottomNavigator" component={MainContainer}
                       options={{
                         headerBackTitleVisible:false,headerShown:false,title: 'Dashboard',
-                        headerStyle: {
-                          backgroundColor: '#f4511e',
-                          alignItems:"center"
-                        },headerTintColor: '#fff',
-                        headerTitleStyle: {
-                          fontWeight: 'bold',
-                        }
                       }} />
 
       </Stack.Navigator>
