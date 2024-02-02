@@ -17,10 +17,10 @@ function LogoTitle() {
     <View style={{display:"flex",flex:1,flexDirection:"column"}}>
       <Image
         style={{ width: 50,
-          height: 30,
-          display: 'flex',
+          height: 20,
+          display: 'none',
           flex:1,
-          alignItems: 'center',
+          //alignItems: 'center',
           backgroundColor: '#fff',
           }}
         source={{uri: 'https://reactnative.dev/docs/assets/p_cat2.png'}}
@@ -63,16 +63,50 @@ export default function MainContainer({navigation}){
                     headerTitle: (props) => <LogoTitle {...props} />,
                     tabBarIcon:()=>{return <FontAwesome5 name={'home'}  size={20} solid />},
                     headerRight: () => (
-                      <TouchableOpacity>
-                      <FontAwesome5 name={'user'} onPress={()=>navigation.navigate("Login")}
-                                    color="black" style={{paddingRight:15}} size={25} solid />
-                      </TouchableOpacity>
+                      <View  style={{flex:4,flexDirection:"row"}}>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'arrow-left'} onPress={()=>Alert.alert('Are you suse', 'Please Choose Action',
+                            [
+                            {
+                              text: 'Ask me later',
+                              onPress: () => console.log('Ask me later pressed'),
+                            },
+                            {
+                              text: 'Cancel',
+                              onPress: () => console.log('Cancel Pressed'),
+                              style: 'cancel',
+                            },
+                            {text: 'OK', onPress: () => console.log('OK Pressed')},
+                          ])}
+                                        style={{paddingRight:30}} size={25} solid />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'arrow-right'} onPress={()=>alert("Search")}
+                                        style={{paddingRight:25}} size={25} solid />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'home'} onPress={()=>alert("Search")}
+                                        style={{paddingRight:25}} size={25} solid />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'wrench'} onPress={()=>alert("Search")}
+                                        style={{paddingRight:25}} size={25} solid />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'search'} onPress={()=>alert("Search")}
+                                         style={{paddingRight:15}} size={25} solid />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'user'} onPress={()=>navigation.navigate("Login")}
+                                        style={{paddingRight:15}} size={25} solid />
+                        </TouchableOpacity>
+                      </View>
                     ),
                     headerLeft: () => (
-                      <TouchableOpacity>
-                        <FontAwesome5 name={'bars'} onPress={()=>alert("Left Menu")}
-                                      color="black" style={{paddingLeft:15}} size={25}  />
-                      </TouchableOpacity>
+                        <TouchableOpacity>
+                          <FontAwesome5 name={'bars'} onPress={()=>alert("Left Menu")}
+                                        color="black" style={{paddingLeft:15}} size={25}  />
+                        </TouchableOpacity>
                     ),
                   }} />
       <Tab.Screen name={"Details"} component={DetailsScreen} options={{headerShown:true,
