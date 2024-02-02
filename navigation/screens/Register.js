@@ -9,7 +9,7 @@ class Register extends Component {
     return (
       <View>
         <Text style={{marginTop:50,marginBottom:30,fontSize:20}}>Register Here</Text>
-        <Button onPress={()=>this.props.navigation.navigate("BottomNavigator")} title="Dashboard"/>
+        <Button onPress={()=>this.props.navigation.navigate("SideBar")} title="Dashboard"/>
       </View>
     );
   }

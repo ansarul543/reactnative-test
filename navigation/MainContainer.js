@@ -3,12 +3,14 @@ import { Image, View, Button, TouchableOpacity, Alert } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ioniccons from "react-native-vector-icons/Ionicons"
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {  DrawerActions } from '@react-navigation/native';
 
 
 //Screens
 import HomeScreen from "./screens/HomeScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import DetailsScreen from "./screens/DetailsScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 const Tab = createBottomTabNavigator()
 
@@ -63,7 +65,7 @@ export default function MainContainer({navigation}){
                     headerTitle: (props) => <LogoTitle {...props} />,
                     tabBarIcon:()=>{return <FontAwesome5 name={'home'}  size={20} solid />},
                     headerRight: () => (
-                      <View  style={{flex:4,flexDirection:"row"}}>
+                      <View  style={{flex:4,flexDirection:"row",paddingTop:25}}>
                         <TouchableOpacity>
                           <FontAwesome5 name={'arrow-left'} onPress={()=>Alert.alert('Are you suse', 'Please Choose Action',
                             [
@@ -80,10 +82,7 @@ export default function MainContainer({navigation}){
                           ])}
                                         style={{paddingRight:30}} size={25} solid />
                         </TouchableOpacity>
-                        <TouchableOpacity>
-                          <FontAwesome5 name={'arrow-right'} onPress={()=>alert("Search")}
-                                        style={{paddingRight:25}} size={25} solid />
-                        </TouchableOpacity>
+
                         <TouchableOpacity>
                           <FontAwesome5 name={'home'} onPress={()=>alert("Search")}
                                         style={{paddingRight:25}} size={25} solid />
@@ -104,7 +103,7 @@ export default function MainContainer({navigation}){
                     ),
                     headerLeft: () => (
                         <TouchableOpacity>
-                          <FontAwesome5 name={'bars'} onPress={()=>alert("Left Menu")}
+                          <FontAwesome5 name={'bars'} onPress={()=>alert("Search")}
                                         color="black" style={{paddingLeft:15}} size={25}  />
                         </TouchableOpacity>
                     ),
