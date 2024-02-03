@@ -65,7 +65,7 @@ export default function MainContainer({navigation}){
                     headerTitle: (props) => <LogoTitle {...props} />,
                     tabBarIcon:()=>{return <FontAwesome5 name={'home'}  size={20} solid />},
                     headerRight: () => (
-                      <View  style={{flex:4,flexDirection:"row",paddingTop:25}}>
+                      <View  style={{flex:4,flexDirection:"row",paddingTop:10}}>
                         <TouchableOpacity>
                           <FontAwesome5 name={'arrow-left'} onPress={()=>Alert.alert('Are you suse', 'Please Choose Action',
                             [
@@ -104,7 +104,7 @@ export default function MainContainer({navigation}){
                     headerLeft: () => (
                         <TouchableOpacity>
                           <FontAwesome5 name={'bars'} onPress={()=>alert("Search")}
-                                        color="black" style={{paddingLeft:15}} size={25}  />
+                                         style={{paddingLeft:15}} size={25}  />
                         </TouchableOpacity>
                     ),
                   }} />
